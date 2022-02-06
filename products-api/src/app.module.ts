@@ -1,13 +1,15 @@
+import { SequelizeModule } from '@nestjs/sequelize';
 import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { ProductsController } from './products.controller';
-import { ProductsService } from './products.service';
-import { Product } from './product.model';
-import { SequelizeModule } from '@nestjs/sequelize';
+import { ProductController } from './product/product.controller';
+import { ProductService } from './product/product.service';
+import { Product } from './product/product.model';
+import { UserModule } from './user/user.module';
 
 @Module({
   imports: [
+    UserModule,
     SequelizeModule.forRoot({
       dialect: 'mysql',
       host: 'localhost',
@@ -20,7 +22,7 @@ import { SequelizeModule } from '@nestjs/sequelize';
     }),
     SequelizeModule.forFeature([Product]),
   ],
-  controllers: [AppController, ProductsController],
-  providers: [AppService, ProductsService],
+  controllers: [AppController, ProductController],
+  providers: [AppService, ProductService],
 })
 export class AppModule {}

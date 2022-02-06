@@ -3,7 +3,7 @@ import { Product } from './product.model';
 import { InjectModel } from '@nestjs/sequelize';
 
 @Injectable()
-export class ProductsService {
+export class ProductService {
   constructor(
     @InjectModel(Product)
     private productModel: typeof Product,

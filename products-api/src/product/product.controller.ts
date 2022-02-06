@@ -8,11 +8,11 @@ import {
   Delete,
 } from '@nestjs/common';
 import { Product } from './product.model';
-import { ProductsService } from './products.service';
+import { ProductService } from './product.service';
 
 @Controller('products')
-export class ProductsController {
-  constructor(private productsService: ProductsService) {}
+export class ProductController {
+  constructor(private productsService: ProductService) {}
 
   @Get()
   async getAll(): Promise<Product[]> {
