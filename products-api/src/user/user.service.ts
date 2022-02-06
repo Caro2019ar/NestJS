@@ -6,6 +6,7 @@ export class UserService {
     {
       id: 1,
       name: 'mary',
+      email: 'mary@gmail.com',
       password: '123456',
       completeName: 'Mary Jesus',
       entryDate: new Date(),
